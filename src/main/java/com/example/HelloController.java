@@ -79,7 +79,6 @@ public class HelloController {
         sendButton.setDisable(true);
 
         sendTask.setOnSucceeded(e -> {
-            //model.getMessages().add(new NtfyMessageDto(USERNAME, message));
             spinner.setVisible(false);
             sendButton.setDisable(false);
         });
