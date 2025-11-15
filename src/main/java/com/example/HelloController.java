@@ -51,11 +51,16 @@ public class HelloController {
 
         } catch (IllegalStateException e){
             showError("Environment error", "Missing or invalid NTFY_SERVER_URL in .env");
+            sendButton.setDisable(true);
+            messageField.setDisable(true);
         }
     }
 
     public void onSendMessage(ActionEvent actionEvent) {
-        
+        if (model == null) {
+            showError("Send failed", "Messaging is not available due to configuration error.");
+            return;
+        }
         String message = messageField.getText().trim();
         if (message.isEmpty()) return;
 

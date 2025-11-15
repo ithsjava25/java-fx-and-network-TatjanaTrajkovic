@@ -48,7 +48,7 @@ public class NtfyHttpConnection implements NtfyConnection{
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(serverUrl + "/" + topic))
-                    .header("Content-Type", "application/jason")
+                    .header("Content-Type", "application/json")
                     .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
                     .build();
 
